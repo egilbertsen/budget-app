@@ -1,2 +1,2 @@
 # budget-app
-A budgeting application with offline caching
+A budgeting application with offline capabilities
