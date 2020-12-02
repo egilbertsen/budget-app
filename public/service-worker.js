@@ -8,7 +8,6 @@ var FILES_TO_CACHE = [
     "/manifest.json",
     "/styles.css",
     "/db.js",
-    "/icons"
 ];
 
 self.addEventListener("install", function(evt) {
