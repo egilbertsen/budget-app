@@ -1,3 +1,6 @@
+const CACHE_NAME = "static-cache-v2";
+const DATA_CACHE_NAME = "data-cache-v1";
+
 var FILES_TO_CACHE = [
     "/",
     "/index.js",
@@ -7,9 +10,6 @@ var FILES_TO_CACHE = [
     "/db.js",
     "/icons"
 ];
-
-const CACHE_NAME = "static-cache-v2";
-const DATA_CACHE_NAME = "data-cache-v1";
 
 self.addEventListener("install", function(evt) {
   evt.waitUntil(
@@ -39,9 +39,7 @@ self.addEventListener("activate", function(evt) {
   self.clients.claim();
 });
 
-// fetch
 self.addEventListener("fetch", function(evt) {
-  // cache successful requests to the API
   if (evt.request.url.includes("/api/")) {
     evt.respondWith(
       caches.open(DATA_CACHE_NAME).then(cache => {
