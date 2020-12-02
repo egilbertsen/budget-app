@@ -8,6 +8,9 @@ var FILES_TO_CACHE = [
     "/icons"
 ];
 
+const CACHE_NAME = "static-cache-v13";
+const DATA_CACHE_NAME = "data-cache-v8"
+
 self.addEventListener("install", event => {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
